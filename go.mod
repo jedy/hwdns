@@ -4,7 +4,7 @@ go 1.22.1
 
 require (
 	github.com/caddyserver/caddy/v2 v2.8.4
-	github.com/jedy/libhw v1.0.0
+	github.com/jedy/libhw v1.0.1
 )
 
 require (

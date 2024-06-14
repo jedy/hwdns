@@ -20,7 +20,8 @@ To use this module for the ACME DNS challenge, [configure the ACME issuer in you
       "provider": {
         "name": "hwdns",
         "access_key_id":"YOUR_HUAWEICLOUD_ACCESS_KEY_ID",
-        "secret_access_key":"YOUR_HUAWEICLOUD_SECRET_ACCESS_KEY"
+        "secret_access_key":"YOUR_HUAWEICLOUD_SECRET_ACCESS_KEY",
+        "region": "PREFERRED_REGION_ID"
       }
     }
   }
@@ -35,6 +36,7 @@ or with the Caddyfile:
 acme_dns hwdns {
   access_key_id {env.HUAWEICLOUD_ACCESS_KEY_ID}
   secret_access_key {env.HUAWEICLOUD_SECRET_ACCESS_KEY}
+  region PREFERRED_REGION_ID
 }
 ```
 
@@ -47,8 +49,11 @@ tls {
   dns hwdns {
     access_key_id {env.HUAWEICLOUD_ACCESS_KEY_ID}
     secret_access_key {env.HUAWEICLOUD_SECRET_ACCESS_KEY}
+    region PREFERRED_REGION_ID
   }
 }
 ```
 
 You can replace `{env.HUAWEICLOUD_ACCESS_KEY_ID}`,`{env.HUAWEICLOUD_SECRET_ACCESS_KEY}` with the actual auth token in the `""` if you prefer to put it directly in your config instead of an environment variable.
+
+You can omit the "region" if you don't have any specific requirements.
